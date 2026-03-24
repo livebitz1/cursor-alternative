@@ -187,11 +187,6 @@ const navigation: NavItem[] = [
     label: "Deliverables",
     icon: Box,
   },
-  {
-    id: "next-steps",
-    label: "Next Steps",
-    icon: ArrowRight,
-  },
 ];
 
 /* ================================================================
@@ -741,12 +736,6 @@ export default function ProposalPage() {
             <Badge variant="outline" className="border-zinc-700 text-zinc-400 text-[10px] hidden sm:inline-flex">
               CONFIDENTIAL
             </Badge>
-            <Button
-              size="sm"
-              className="bg-white text-black hover:bg-zinc-200 text-xs h-8 px-4 font-semibold"
-            >
-              Approve Proposal
-            </Button>
           </div>
         </div>
       </header>
@@ -1753,62 +1742,6 @@ WITH optimization stack:
           <Separator className="bg-zinc-800/60 my-12" />
 
           {/* ════════════════════════════════════════
-              NEXT STEPS
-             ════════════════════════════════════════ */}
-          <section id="next-steps" className="scroll-mt-20">
-            <Badge variant="outline" className="border-zinc-700 text-zinc-500 text-[10px] mb-4">
-              ACTION ITEMS
-            </Badge>
-            <h1 className="text-3xl font-extrabold tracking-tight mb-2">Next Steps</h1>
-            <p className="text-zinc-400 text-sm leading-relaxed mb-8">
-              Required actions to begin development.
-            </p>
-
-            <ol className="space-y-4 mb-10">
-              {[
-                { title: "Approve Proposal", desc: "Review and approve scope, timeline, and budget" },
-                { title: "Sign Agreement", desc: "Execute development agreement with milestone terms" },
-                { title: "Initial Payment (₹1 Cr)", desc: "Release kickoff payment to begin hiring" },
-                { title: "Begin Hiring (Week 1-3)", desc: "Recruit Tech Lead, ML Engineer, Backend Engineers" },
-                { title: "Development Starts (Week 4)", desc: "Infrastructure setup, VS Code fork initialization" },
-              ].map((step, i) => (
-                <li key={step.title} className="flex gap-4">
-                  <div className="flex flex-col items-center">
-                    <div className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center font-bold text-sm">{i + 1}</div>
-                    {i < 4 && <div className="w-px flex-1 bg-zinc-800 mt-2" />}
-                  </div>
-                  <div className="pb-4">
-                    <h4 className="font-semibold text-white">{step.title}</h4>
-                    <p className="text-sm text-zinc-400">{step.desc}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-
-            {/* CTA */}
-            <div className="rounded-xl border border-zinc-700/40 bg-gradient-to-br from-zinc-900/60 to-black p-8 text-center">
-              <h2 className="text-2xl font-extrabold text-white mb-3">Ready to Build?</h2>
-              <p className="text-zinc-400 text-sm max-w-lg mx-auto mb-6">
-                This proposal covers complete development costs for an 18-month build of an enterprise-grade AI IDE.
-              </p>
-
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-                <StatCard label="Timeline" value="18 Mo" />
-                <StatCard label="Dev Cost" value="₹6.29Cr" />
-                <StatCard label="Team" value="19" />
-                <StatCard label="Target" value="50K" />
-              </div>
-
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <Button size="lg" className="bg-white text-black hover:bg-zinc-200 font-semibold px-8 rounded-lg">
-                  Approve Proposal <Rocket className="ml-2 w-4 h-4" />
-                </Button>
-                <Button variant="outline" size="lg" className="border-zinc-700 text-zinc-300 hover:bg-zinc-900 rounded-lg px-8">
-                  Request Changes
-                </Button>
-              </div>
-            </div>
-          </section>
 
           {/* Footer */}
           <footer className="mt-16 pt-8 border-t border-zinc-800/60 text-center">
